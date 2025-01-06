@@ -14,6 +14,8 @@ A simple and efficient script for uploading an image using a custom `Upload` cla
 
 This script demonstrates how to use an `Upload` class to handle image uploads. In this example, an image (`mac-wallpaper.jpg`) is uploaded to a destination server or service. The script uses `async/await` for asynchronous operations and handles the upload process neatly in a self-executing function.
 
+This project is hosted under the **user** `sattorbekh` and the **repository** `imgur` on GitHub.
+
 ## Installation
 
 To run this project, ensure you have Node.js installed. If it's not installed, you can download it from [Node.js Official Website](https://nodejs.org/).
@@ -21,8 +23,8 @@ To run this project, ensure you have Node.js installed. If it's not installed, y
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/image-upload-script.git
-cd image-upload-script
+git clone https://github.com/sattorbekh/imgur.git
+cd imgur
 ```
 
 ### 2. Install the necessary dependencies:
@@ -60,21 +62,35 @@ The main part of the script is:
 import Upload from './src/upload.js';
 
 (async () => {
-    const image = "/Users/sattorbek/Mac/Documents/mac-wallpaper.jpg";
+    const imagePath = "/Users/sattorbek/Documents/mac-wallpaper.jpg";
     const upload = new Upload();
-    const response = await upload.uploadImage(image);
+    const response = await upload.uploadImage(imagePath);
     console.log(response);
 })();
 ```
 
+### Example Response
+
+After the image is successfully uploaded, the API will return a response similar to the following:
+
+```json
+{
+  "data": {
+    "link": "https://imgur.com/adKcslM"
+  }
+}
+```
+
+In this case, the response contains a `link` property that points to the uploaded image on the remote server.
+
 ### Image Upload
 
-You can replace the `image` variable with the path to any image file you wish to upload. Make sure that the `uploadImage` method in the `Upload` class is set up to handle the upload to your desired server or service (e.g., cloud storage, an API endpoint, etc.).
+You can replace the `imagePath` variable with the path to any image file you wish to upload. Make sure that the `uploadImage` method in the `Upload` class is set up to handle the upload to your desired server or service (e.g., cloud storage, an API endpoint, etc.).
 
 ## File Structure
 
 ```
-/image-upload-script
+/imgur
 |-- /src
 |   |-- upload.js       # Upload class that handles the image upload logic
 |-- index.js           # Main script that triggers the image upload process
@@ -96,7 +112,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Notes:
 
 - **Upload class**: The `upload.js` file should define a class `Upload` with a method `uploadImage(imagePath)`. You can add additional functionality such as validation, error handling, and custom configurations inside that class.
-- **Image path**: The `image` variable stores the path to the image you want to upload. Replace the path with the one that suits your needs.
+- **Image path**: The `imagePath` variable stores the path to the image you want to upload. Replace the path with the one that suits your needs.
 
 Feel free to modify the `README.md` if your script changes or if you add more features.
 
