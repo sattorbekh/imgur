@@ -93,8 +93,8 @@ You can replace the `imagePath` variable with the path to any image file you wis
 /imgur
 |-- /src
 |   |-- upload.js       # Upload class that handles the image upload logic
-|-- index.js           # Main script that triggers the image upload process
 |-- README.md          # This file
+|-- LICENSE
 |-- package.json       # Node.js package file (if applicable)
 ```
 
