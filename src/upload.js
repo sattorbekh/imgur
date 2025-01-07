@@ -10,7 +10,7 @@ export default class Upload {
                 'Referer': 'https://imgur.com',
                 'Accept': 'application/json',
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36',
-                'Authorization': `Client-ID e4f58fc81daec99`,
+                'Authorization': `Client-ID e4f58fc81daec99',
             },
         });
     }
